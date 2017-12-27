@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/vincent/resources/views/page/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vincent/resources/views/extensions/form/date.blade.php</file>
             <file>file:/C:/xampp/htdocs/vincent/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/vincent/resources/views/layouts/navigation.blade.php</file>
-            <file>file:/C:/xampp/htdocs/vincent/resources/views/page/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vincent/resources/views/extensions/form/text.blade.php</file>
         </group>
     </open-files>
 </project-private>

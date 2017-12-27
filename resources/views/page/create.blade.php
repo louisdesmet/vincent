@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             {!! Form::open(array('route' => 'page.store')) !!}
-                @include('extensions.form.text')             
+                {{ Form::bootstrapText('name') }}         
                 <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i>&nbsp;Add</button>
             {!! Form::close() !!}
         </div>
