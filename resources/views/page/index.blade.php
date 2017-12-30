@@ -9,7 +9,7 @@
         <div class="card-body">
             <table class="table table-striped">
                 <tr>
-                    <th>Name</th>
+                    <th>Name</th>                    
                     <th class="float-right">Actions</th>
                 </tr>
                 @foreach ($pages as $page)

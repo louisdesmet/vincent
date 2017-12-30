@@ -1,5 +1,5 @@
 <?php
-
+use App\Navigation;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DisplayController@frontpage')->name('frontpage');
+
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
 Route::resource('page', 'PageController')->middleware('auth');
+Route::resource('navigation', 'NavigationController')->middleware('auth');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+foreach (Navigation::all() as $navigation) {
+    Route::get('/{'.$navigation->name.'}', 'DisplayController@show')->name($navigation->name);
+}
 

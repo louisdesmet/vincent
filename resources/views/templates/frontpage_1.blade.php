@@ -12,7 +12,6 @@
         <nav>
             {{ $page->name }}
             @foreach ($navigations as $navigation) 
-            
                 <a href="{{ route($navigation->name, ['navigation' => $navigation]) }}">{{ $navigation->name }}</a>
             @endforeach
         </nav>

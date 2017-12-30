@@ -36,7 +36,13 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2|max:35',
+        ]);
+        $page = new Page;
+        $page->name = $request->name;       
+        $page->save();
+        return redirect()->route('page.index');
     }
 
     /**
@@ -47,7 +53,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        return view('page.show');
+        
     }
 
     /**
@@ -58,7 +64,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        return view('page.edit');
+        return view('page.edit',compact('page'));
     }
 
     /**
@@ -70,7 +76,13 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2|max:35',
+        ]);
+        $page = Page::findOrFail($page->id);
+        $page->name = $request->name;       
+        $page->save();
+        return redirect()->route('page.index');
     }
 
     /**
@@ -81,7 +93,9 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
+        /*$page->navigation()::destroy();*/
         Page::destroy($page->id);
+        
         return redirect()->route('page.index');
     }
 }
